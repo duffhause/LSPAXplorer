@@ -38,6 +38,7 @@ namespace LSPAXplorer
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.treeView1 = new System.Windows.Forms.TreeView();
+			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
 			this.hexBox1 = new Be.Windows.Forms.HexBox();
 			this.contextMenuStrip1.SuspendLayout();
@@ -67,9 +68,12 @@ namespace LSPAXplorer
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(12, 12);
+			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.button1.ImageIndex = 0;
+			this.button1.ImageList = this.imageList1;
+			this.button1.Location = new System.Drawing.Point(13, 12);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.Size = new System.Drawing.Size(95, 30);
 			this.button1.TabIndex = 1;
 			this.button1.Text = "File";
 			this.button1.UseVisualStyleBackColor = true;
@@ -85,7 +89,7 @@ namespace LSPAXplorer
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.splitContainer1.Location = new System.Drawing.Point(12, 41);
+			this.splitContainer1.Location = new System.Drawing.Point(12, 48);
 			this.splitContainer1.Name = "splitContainer1";
 			// 
 			// splitContainer1.Panel1
@@ -96,19 +100,31 @@ namespace LSPAXplorer
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
 			this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-			this.splitContainer1.Size = new System.Drawing.Size(776, 397);
+			this.splitContainer1.Size = new System.Drawing.Size(776, 390);
 			this.splitContainer1.SplitterDistance = 233;
 			this.splitContainer1.TabIndex = 4;
 			// 
 			// treeView1
 			// 
+			this.treeView1.BackColor = System.Drawing.SystemColors.ControlLight;
 			this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
 			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView1.ImageIndex = 1;
+			this.treeView1.ImageList = this.imageList1;
 			this.treeView1.Location = new System.Drawing.Point(0, 0);
 			this.treeView1.Name = "treeView1";
-			this.treeView1.Size = new System.Drawing.Size(231, 395);
+			this.treeView1.SelectedImageIndex = 0;
+			this.treeView1.Size = new System.Drawing.Size(231, 388);
 			this.treeView1.TabIndex = 0;
 			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+			this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeview1_MouseDown);
+			// 
+			// imageList1
+			// 
+			this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+			this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+			this.imageList1.Images.SetKeyName(0, "file.ico");
+			this.imageList1.Images.SetKeyName(1, "folder.ico");
 			// 
 			// splitContainer2
 			// 
@@ -122,8 +138,8 @@ namespace LSPAXplorer
 			// splitContainer2.Panel2
 			// 
 			this.splitContainer2.Panel2.Controls.Add(this.hexBox1);
-			this.splitContainer2.Size = new System.Drawing.Size(531, 389);
-			this.splitContainer2.SplitterDistance = 211;
+			this.splitContainer2.Size = new System.Drawing.Size(531, 382);
+			this.splitContainer2.SplitterDistance = 207;
 			this.splitContainer2.TabIndex = 0;
 			// 
 			// hexBox1
@@ -137,7 +153,7 @@ namespace LSPAXplorer
 			this.hexBox1.Name = "hexBox1";
 			this.hexBox1.ReadOnly = true;
 			this.hexBox1.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-			this.hexBox1.Size = new System.Drawing.Size(531, 174);
+			this.hexBox1.Size = new System.Drawing.Size(531, 171);
 			this.hexBox1.StringViewVisible = true;
 			this.hexBox1.TabIndex = 0;
 			this.hexBox1.VScrollBarVisible = true;
@@ -180,6 +196,7 @@ namespace LSPAXplorer
 		private System.Windows.Forms.TreeView treeView1;
 		private System.Windows.Forms.SplitContainer splitContainer2;
 		private Be.Windows.Forms.HexBox hexBox1;
+		private System.Windows.Forms.ImageList imageList1;
 	}
 }
 

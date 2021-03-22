@@ -39,11 +39,14 @@ namespace LSPAXplorer
 			int i = 0;
 			foreach (LSPA.Chunk.Node child in currentChunk.Children)
 			{
-				parentNode.Nodes.Add(child.Name);
+				int image = 0;
+				bool isFolder = child.Children != null;
+				if (isFolder) image = 1;
+				parentNode.Nodes.Add(child.Name, child.Name, image);
 				string filepath = String.Format("{0}/{1}", path, child.Name);
 				parentNode.Nodes[i].Name = filepath;
 				parentNode.Nodes[i].Tag = child;
-				if (child.Children != null)
+				if (isFolder)
 				{
 					UpdateTree(parentNode.Nodes[i], child, filepath);
 				}
@@ -71,7 +74,9 @@ namespace LSPAXplorer
 
 		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
 		{
-			hexBox1.ByteProvider = new DynamicByteProvider(LSPA.GetFile(Reader, (LSPA.Chunk.Node)treeView1.SelectedNode.Tag));
+			LSPA.Chunk.Node chunk = (LSPA.Chunk.Node)e.Node.Tag;
+			hexBox1.ByteProvider = new DynamicByteProvider(LSPA.GetFile(Reader, chunk));
+			e.Node.SelectedImageIndex = e.Node.ImageIndex;
 		}
 
 		private void extractToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,9 +96,9 @@ namespace LSPAXplorer
 			}
 		}
 
-		private void hexBox1_Click(object sender, EventArgs e)
+		private void treeview1_MouseDown(object sender, TreeNodeMouseClickEventArgs e)
 		{
-
+			if(e.Button == MouseButtons.Right) treeView1.SelectedNode = e.Node;
 		}
 
 		private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
