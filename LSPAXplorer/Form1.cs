@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.IO;
 using LucasDuff;
 using Be.Windows.Forms;
-using System.Design;
+using System.Drawing;
 
 namespace LSPAXplorer
 {
@@ -77,6 +77,14 @@ namespace LSPAXplorer
 			LSPA.Chunk.Node chunk = (LSPA.Chunk.Node)e.Node.Tag;
 			hexBox1.ByteProvider = new DynamicByteProvider(LSPA.GetFile(Reader, chunk));
 			e.Node.SelectedImageIndex = e.Node.ImageIndex;
+
+			if (Path.GetExtension(chunk.Name) == ".png")
+			{
+				using (var ms = new MemoryStream(LSPA.GetFile(Reader, chunk)))
+				{
+					pictureBox1.Image = Image.FromStream(ms);
+				}
+			}
 		}
 
 		private void extractToolStripMenuItem_Click(object sender, EventArgs e)
