@@ -112,5 +112,8 @@
   <ItemGroup>
     <Content Include="HexBox\HexBox.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,6 +23,11 @@ namespace LSPAXplorer
 
 		}
 
+		private void form_resize(object sender, EventArgs e)
+		{
+			
+		}
+
 		private void UpdateTree(TreeNode parentNode, LSPA.Chunk.Node currentChunk, string path)
 		{
 			if (path == Root.Name)
@@ -84,6 +89,21 @@ namespace LSPAXplorer
 					LSPA.ExtractLSPA(Reader, chunk, saveFileDialog1.FileName);
 				}
 			}
+		}
+
+		private void hexBox1_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void hexBox1_Click_1(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
