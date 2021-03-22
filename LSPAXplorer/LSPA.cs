@@ -198,13 +198,19 @@ namespace LucasDuff
 			return Root;
 		}
 
+		public static byte[] GetFile(FileStream Reader, Chunk.Node chunk)
+		{
+			byte[] file = new byte[chunk.Size];
+			Reader.Position = chunk.Offset;
+			Reader.Read(file, 0, (int)chunk.Size);
+			return file;
+		}
+
 		// Method to extract file from LSPA
 		public static void ExtractFile(FileStream Reader, Chunk.Node chunk, string filePath)
 		{
 			// Get file data
-			byte[] file = new byte[chunk.Size];
-			Reader.Position = chunk.Offset;
-			Reader.Read(file, 0, (int)chunk.Size);
+			byte[] file = GetFile(Reader, chunk);
 
 			// Write file data
 			BinaryWriter outputWriter = new BinaryWriter(File.Open(filePath, FileMode.Create, FileAccess.Write));

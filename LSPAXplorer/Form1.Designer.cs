@@ -36,6 +36,7 @@ namespace LSPAXplorer
 			this.button1 = new System.Windows.Forms.Button();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			this.hexBox1 = new Be.Windows.Forms.HexBox();
 			this.contextMenuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -45,7 +46,7 @@ namespace LSPAXplorer
 			this.treeView1.ContextMenuStrip = this.contextMenuStrip1;
 			this.treeView1.Location = new System.Drawing.Point(13, 41);
 			this.treeView1.Name = "treeView1";
-			this.treeView1.Size = new System.Drawing.Size(775, 397);
+			this.treeView1.Size = new System.Drawing.Size(250, 397);
 			this.treeView1.TabIndex = 0;
 			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
 			// 
@@ -78,11 +79,24 @@ namespace LSPAXplorer
 			// 
 			this.openFileDialog1.FileName = "openFileDialog1";
 			// 
+			// hexBox1
+			// 
+			this.hexBox1.ColumnInfoVisible = true;
+			this.hexBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.hexBox1.LineInfoVisible = true;
+			this.hexBox1.Location = new System.Drawing.Point(269, 281);
+			this.hexBox1.Name = "hexBox1";
+			this.hexBox1.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+			this.hexBox1.Size = new System.Drawing.Size(519, 157);
+			this.hexBox1.TabIndex = 2;
+			this.hexBox1.VScrollBarVisible = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.hexBox1);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.treeView1);
 			this.Name = "Form1";
@@ -101,6 +115,7 @@ namespace LSPAXplorer
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem extractToolStripMenuItem;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+		private Be.Windows.Forms.HexBox hexBox1;
 	}
 }
 

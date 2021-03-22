@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.IO;
 using LucasDuff;
+using Be.Windows.Forms;
+using System.Design;
 
 namespace LSPAXplorer
 {
@@ -13,6 +15,7 @@ namespace LSPAXplorer
 		public Form1()
 		{
 			InitializeComponent();
+			
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -63,6 +66,7 @@ namespace LSPAXplorer
 
 		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
 		{
+			hexBox1.ByteProvider = new DynamicByteProvider(LSPA.GetFile(Reader, (LSPA.Chunk.Node)treeView1.SelectedNode.Tag));
 		}
 
 		private void extractToolStripMenuItem_Click(object sender, EventArgs e)
