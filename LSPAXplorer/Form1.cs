@@ -4,18 +4,21 @@ using System.IO;
 using LucasDuff;
 using Be.Windows.Forms;
 using System.Drawing;
-
+ 
 namespace LSPAXplorer
 {
 	public partial class Form1 : Form
 	{
 		LSPA.Chunk.Node Root;
 		FileStream Reader;
+		AxWMPLib.AxWindowsMediaPlayer player;
 		string[] TextExtensions = { ".con", ".mfk", ".txt", ".xml", ".ini", ".spt", ".lua" };
+		string[] SoundExtensions = { ".rsd", ".ogg", ".FLAC"};
 
 		public Form1()
 		{
-			InitializeComponent();			
+			InitializeComponent();
+			player = new AxWMPLib.AxWindowsMediaPlayer();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -86,11 +89,22 @@ namespace LSPAXplorer
 			LSPA.Chunk.Node chunk = (LSPA.Chunk.Node)e.Node.Tag;
 			hexBox1.ByteProvider = new DynamicByteProvider(LSPA.GetFile(Reader, chunk));
 			e.Node.SelectedImageIndex = e.Node.ImageIndex;
+			
 			try
 			{
 				this.splitContainer2.Panel1.Controls.Remove(this.splitContainer2.Panel1.Controls[0]);
 			}
 			catch
+			{
+
+			}
+
+			try
+			{
+				player.Ctlcontrols.stop();
+				player.Dispose();
+				player = new AxWMPLib.AxWindowsMediaPlayer();
+			} catch
 			{
 
 			}
@@ -116,7 +130,32 @@ namespace LSPAXplorer
 				textBox.Text = System.Text.Encoding.Default.GetString(LSPA.GetFile(Reader, chunk));
 				textBox.ScrollBars = ScrollBars.Both;
 				this.splitContainer2.Panel1.Controls.Add(textBox);
-			}
+			} else if (StringInArray(ext, SoundExtensions))
+			{
+				player = new AxWMPLib.AxWindowsMediaPlayer();
+				Console.WriteLine(player.GetType());
+				this.Controls.Add(player);
+				this.splitContainer2.Panel1.Controls.Add(player);
+				player.Dock = DockStyle.Fill;
+				string tmp = String.Format("{0}{1}", Path.GetTempPath(), chunk.Name);
+				BinaryWriter outputWriter = new BinaryWriter(File.Open(tmp, FileMode.Create, FileAccess.Write));
+				outputWriter.Write(LSPA.GetFile(Reader, chunk));
+				outputWriter.Close();
+
+				string command = String.Format("-i \"{0}\" -y \"{1}\"", tmp, String.Concat(tmp, ".mp3"));
+				System.Diagnostics.Process process = new System.Diagnostics.Process();
+				System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+				startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+				startInfo.FileName = "ffmpeg";
+				startInfo.Arguments = command;
+				process.StartInfo = startInfo;
+				process.Start();
+				process.WaitForExit();
+
+				player.CreateControl();
+				player.URL = String.Concat(tmp, ".mp3");
+				player.Ctlcontrols.stop();
+			} 
 		}
 
 		private void extractToolStripMenuItem_Click(object sender, EventArgs e)
