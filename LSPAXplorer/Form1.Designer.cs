@@ -184,7 +184,6 @@ namespace LSPAXplorer
 			this.Name = "Form1";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
 			this.Text = "LSPA Xplorer";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.Resize += new System.EventHandler(this.form_resize);
 			this.contextMenuStrip1.ResumeLayout(false);

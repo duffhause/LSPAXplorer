@@ -146,8 +146,10 @@ namespace LSPAXplorer
 			this.Controls.Add(player);
 			this.splitContainer2.Panel1.Controls.Add(player);
 			player.Dock = DockStyle.Fill;
-			string ffmpeg = String.Format("{0}{1}", Path.GetTempPath(), "lspaxffmpeg.exe");
-			string tmp = String.Format("{0}{1}", Path.GetTempPath(), chunk.Name);
+			string tempFolder = String.Format("{0}{1}", Path.GetTempPath(), "LSPAXp/");
+			Directory.CreateDirectory(tempFolder);
+			string ffmpeg = String.Format("{0}{1}", tempFolder, "ffmpeg.exe");
+			string tmp = String.Format("{0}{1}", tempFolder, chunk.Name);
 			string tmp0 = String.Concat(tmp, codec);
 
 			BinaryWriter outputWriter = new BinaryWriter(File.Open(tmp, FileMode.Create, FileAccess.Write));
