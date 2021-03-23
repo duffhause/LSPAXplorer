@@ -11,11 +11,11 @@ namespace LSPAXplorer
 	{
 		LSPA.Chunk.Node Root;
 		FileStream Reader;
+		string[] TextExtensions = { ".con", ".mfk", ".txt", ".xml", ".ini", ".spt", ".lua" };
 
 		public Form1()
 		{
-			InitializeComponent();
-			
+			InitializeComponent();			
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -72,18 +72,50 @@ namespace LSPAXplorer
 			}
 		}
 
+		private bool StringInArray(string str, string[] strArr)
+		{
+			foreach(string s in strArr)
+			{
+				if (s == str) return true;
+			}
+			return false;
+		}
+
 		private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
 		{
 			LSPA.Chunk.Node chunk = (LSPA.Chunk.Node)e.Node.Tag;
 			hexBox1.ByteProvider = new DynamicByteProvider(LSPA.GetFile(Reader, chunk));
 			e.Node.SelectedImageIndex = e.Node.ImageIndex;
-
-			if (Path.GetExtension(chunk.Name) == ".png")
+			try
 			{
+				this.splitContainer2.Panel1.Controls.Remove(this.splitContainer2.Panel1.Controls[0]);
+			}
+			catch
+			{
+
+			}
+			
+
+			string ext = Path.GetExtension(chunk.Name);
+
+			if (ext == ".png")
+			{
+				System.Windows.Forms.PictureBox pictureBox1 = new System.Windows.Forms.PictureBox();
+				pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+				pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+				pictureBox1.Location = new System.Drawing.Point(0, 0);
 				using (var ms = new MemoryStream(LSPA.GetFile(Reader, chunk)))
 				{
 					pictureBox1.Image = Image.FromStream(ms);
 				}
+				this.splitContainer2.Panel1.Controls.Add(pictureBox1);
+			} else if (StringInArray(ext, TextExtensions)) {
+				System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+				textBox.Multiline = true;
+				textBox.Dock = System.Windows.Forms.DockStyle.Fill;
+				textBox.Text = System.Text.Encoding.Default.GetString(LSPA.GetFile(Reader, chunk));
+				textBox.ScrollBars = ScrollBars.Both;
+				this.splitContainer2.Panel1.Controls.Add(textBox);
 			}
 		}
 

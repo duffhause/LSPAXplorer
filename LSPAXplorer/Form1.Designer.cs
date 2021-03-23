@@ -40,7 +40,6 @@ namespace LSPAXplorer
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.hexBox1 = new Be.Windows.Forms.HexBox();
 			this.contextMenuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -48,10 +47,8 @@ namespace LSPAXplorer
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-			this.splitContainer2.Panel1.SuspendLayout();
 			this.splitContainer2.Panel2.SuspendLayout();
 			this.splitContainer2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// contextMenuStrip1
@@ -138,26 +135,12 @@ namespace LSPAXplorer
 			this.splitContainer2.Name = "splitContainer2";
 			this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
-			// splitContainer2.Panel1
-			// 
-			this.splitContainer2.Panel1.Controls.Add(this.pictureBox1);
-			// 
 			// splitContainer2.Panel2
 			// 
 			this.splitContainer2.Panel2.Controls.Add(this.hexBox1);
 			this.splitContainer2.Size = new System.Drawing.Size(531, 382);
 			this.splitContainer2.SplitterDistance = 207;
 			this.splitContainer2.TabIndex = 0;
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(531, 207);
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
 			// 
 			// hexBox1
 			// 
@@ -196,11 +179,9 @@ namespace LSPAXplorer
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
-			this.splitContainer2.Panel1.ResumeLayout(false);
 			this.splitContainer2.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
 			this.splitContainer2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -216,7 +197,6 @@ namespace LSPAXplorer
 		private System.Windows.Forms.SplitContainer splitContainer2;
 		private Be.Windows.Forms.HexBox hexBox1;
 		private System.Windows.Forms.ImageList imageList1;
-		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }
 
