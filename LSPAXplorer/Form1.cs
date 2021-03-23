@@ -128,6 +128,7 @@ namespace LSPAXplorer
 				textBox.Multiline = true;
 				textBox.Dock = System.Windows.Forms.DockStyle.Fill;
 				textBox.Text = System.Text.Encoding.Default.GetString(LSPA.GetFile(Reader, chunk));
+				textBox.Text = textBox.Text.Replace("\n", "\r\n");
 				textBox.ScrollBars = ScrollBars.Both;
 				this.splitContainer2.Panel1.Controls.Add(textBox);
 			} else if (StringInArray(ext, SoundExtensions))
