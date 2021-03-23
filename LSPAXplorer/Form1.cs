@@ -11,14 +11,18 @@ namespace LSPAXplorer
 	{
 		LSPA.Chunk.Node Root;
 		FileStream Reader;
+		Liscences liscences;
 		AxWMPLib.AxWindowsMediaPlayer player;
 		string[] TextExtensions = { ".con", ".mfk", ".txt", ".xml", ".ini", ".spt", ".lua" };
 		string[] SoundExtensions = { ".rsd", ".ogg", ".FLAC"};
+		string[] VideoExtensions = { ".bik", ".rmv" };
 
 		public Form1()
 		{
 			InitializeComponent();
 			player = new AxWMPLib.AxWindowsMediaPlayer();
+			liscences = new Liscences();
+			liscences.Hide();
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -79,7 +83,7 @@ namespace LSPAXplorer
 		{
 			foreach(string s in strArr)
 			{
-				if (s == str) return true;
+				if (s.ToLower() == str.ToLower()) return true;
 			}
 			return false;
 		}
@@ -90,26 +94,22 @@ namespace LSPAXplorer
 			hexBox1.ByteProvider = new DynamicByteProvider(LSPA.GetFile(Reader, chunk));
 			e.Node.SelectedImageIndex = e.Node.ImageIndex;
 			
-			try
+			// Remove current preview
+			if (this.splitContainer2.Panel1.Controls.Count > 0)
 			{
 				this.splitContainer2.Panel1.Controls.Remove(this.splitContainer2.Panel1.Controls[0]);
 			}
-			catch
-			{
-
-			}
-
 			try
 			{
 				player.Ctlcontrols.stop();
 				player.Dispose();
 				player = new AxWMPLib.AxWindowsMediaPlayer();
-			} catch
+			} catch (System.Windows.Forms.AxHost.InvalidActiveXStateException)
 			{
+				
+			} 
 
-			}
-			
-
+			// Add new preview
 			string ext = Path.GetExtension(chunk.Name);
 
 			if (ext == ".png")
@@ -132,30 +132,51 @@ namespace LSPAXplorer
 				this.splitContainer2.Panel1.Controls.Add(textBox);
 			} else if (StringInArray(ext, SoundExtensions))
 			{
-				player = new AxWMPLib.AxWindowsMediaPlayer();
-				Console.WriteLine(player.GetType());
-				this.Controls.Add(player);
-				this.splitContainer2.Panel1.Controls.Add(player);
-				player.Dock = DockStyle.Fill;
-				string tmp = String.Format("{0}{1}", Path.GetTempPath(), chunk.Name);
-				BinaryWriter outputWriter = new BinaryWriter(File.Open(tmp, FileMode.Create, FileAccess.Write));
-				outputWriter.Write(LSPA.GetFile(Reader, chunk));
-				outputWriter.Close();
+				PlayInPlayer(chunk, true, ".mp3");
+			} else if (StringInArray(ext, VideoExtensions))
+			{
+				PlayInPlayer(chunk, true, ".mp4");
+			}
+		}
 
-				string command = String.Format("-i \"{0}\" -y \"{1}\"", tmp, String.Concat(tmp, ".mp3"));
+		private void PlayInPlayer(LSPA.Chunk.Node chunk, bool convert, string codec = "")
+		{
+			player = new AxWMPLib.AxWindowsMediaPlayer();
+			Console.WriteLine(player.GetType());
+			this.Controls.Add(player);
+			this.splitContainer2.Panel1.Controls.Add(player);
+			player.Dock = DockStyle.Fill;
+			string ffmpeg = String.Format("{0}{1}", Path.GetTempPath(), "lspaxffmpeg.exe");
+			string tmp = String.Format("{0}{1}", Path.GetTempPath(), chunk.Name);
+			string tmp0 = String.Concat(tmp, codec);
+
+			BinaryWriter outputWriter = new BinaryWriter(File.Open(tmp, FileMode.Create, FileAccess.Write));
+			outputWriter.Write(LSPA.GetFile(Reader, chunk));
+			outputWriter.Close();
+
+			if (convert)
+			{
+				if (!File.Exists(ffmpeg))
+				{
+					outputWriter = new BinaryWriter(File.Open(ffmpeg, FileMode.Create, FileAccess.Write));
+					outputWriter.Write(LSPAXplorer.Properties.Resources.ffmpeg);
+					outputWriter.Close();
+				}
+
+				string command = String.Format("-i \"{0}\" -y \"{1}\"", tmp, tmp0);
 				System.Diagnostics.Process process = new System.Diagnostics.Process();
 				System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
 				startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-				startInfo.FileName = "ffmpeg";
+				startInfo.FileName = ffmpeg;
 				startInfo.Arguments = command;
 				process.StartInfo = startInfo;
 				process.Start();
 				process.WaitForExit();
+			}
 
-				player.CreateControl();
-				player.URL = String.Concat(tmp, ".mp3");
-				player.Ctlcontrols.stop();
-			} 
+			player.CreateControl();
+			player.URL = tmp0;
+			player.Ctlcontrols.stop();
 		}
 
 		private void extractToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,6 +209,11 @@ namespace LSPAXplorer
 		private void hexBox1_Click_1(object sender, EventArgs e)
 		{
 
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			liscences.ShowDialog();
 		}
 	}
 }

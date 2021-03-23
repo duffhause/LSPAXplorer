@@ -75,6 +75,12 @@
     <Compile Include="HexBox\MemoryDataBlock.cs" />
     <Compile Include="HexBox\NativeMethods.cs" />
     <Compile Include="HexBox\Util.cs" />
+    <Compile Include="Liscences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Liscences.Designer.cs">
+      <DependentUpon>Liscences.cs</DependentUpon>
+    </Compile>
     <Compile Include="LSPA.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HexBox\HexBox.resx">
       <DependentUpon>HexBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Liscences.resx">
+      <DependentUpon>Liscences.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,10 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HexBox\HexBox.bmp" />
+    <Content Include="Resources\ffmpeg.exe" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <COMReference Include="AxWMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>

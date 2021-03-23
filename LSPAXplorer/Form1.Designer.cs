@@ -41,6 +41,7 @@ namespace LSPAXplorer
 			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
 			this.hexBox1 = new Be.Windows.Forms.HexBox();
+			this.button2 = new System.Windows.Forms.Button();
 			this.contextMenuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -159,17 +160,29 @@ namespace LSPAXplorer
 			this.hexBox1.VScrollBarVisible = true;
 			this.hexBox1.Click += new System.EventHandler(this.hexBox1_Click_1);
 			// 
+			// button2
+			// 
+			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button2.Location = new System.Drawing.Point(684, 12);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(99, 29);
+			this.button2.TabIndex = 5;
+			this.button2.Text = "Liscences";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.button2);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.button1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
+			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
 			this.Text = "LSPA Xplorer";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Form1_Load);
@@ -197,6 +210,7 @@ namespace LSPAXplorer
 		private System.Windows.Forms.SplitContainer splitContainer2;
 		private Be.Windows.Forms.HexBox hexBox1;
 		private System.Windows.Forms.ImageList imageList1;
+		private System.Windows.Forms.Button button2;
 	}
 }
 
