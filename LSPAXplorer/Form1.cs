@@ -184,16 +184,16 @@ namespace LSPAXplorer
 		private void extractToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			LSPA.Chunk.Node chunk = (LSPA.Chunk.Node)treeView1.SelectedNode.Tag;
-			saveFileDialog1.FileName = chunk.Name;
-			if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)
+			if (folderBrowserDialog1.ShowDialog() != DialogResult.Cancel)
 			{
+				string path = string.Format("{1}/{0}", chunk.Name, folderBrowserDialog1.SelectedPath);
 				if (chunk.Children == null)
 				{
-					LSPA.ExtractFile(Reader, chunk, string.Format("{1}{0}", chunk.Name, saveFileDialog1.FileName));
+					LSPA.ExtractFile(Reader, chunk, path);
 				}
 				else
 				{
-					LSPA.ExtractLSPA(Reader, chunk, saveFileDialog1.FileName);
+					LSPA.ExtractLSPA(Reader, chunk, path);
 				}
 			}
 		}

@@ -121,32 +121,32 @@
     <value>184, 17</value>
   </metadata>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>532, 17</value>
+    <value>587, 17</value>
   </metadata>
   <data name="imageList1.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACw
-        BQAAAk1TRnQBSQFMAgEBAgEAASABAAEgAQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        BQAAAk1TRnQBSQFMAgEBAgEAATgBAAE4AQABEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEgBgABEGIABP8DzAH/FAAI/5gAA+oB/wPqAf8D6gH/A+oB/wPqAf8D6gH/A+MB/wPj
-        Af8D4wH/A+MF/xQABP8BYgLMAf8DsgH/A/EB/wQAAcYB1gHvAf8BYgLMAf8BYgLMAf8BYgLMAf8BYgGZ
-        AcwB/wPqAf+UAAPxAf8D8QH/A/EB/wPxAf8D8QH/A+oB/wPqAf8D6gH/A+oB/wPqBf8QAAPxAf8BYgLM
-        Af8BYgLMAf8BLwFiAZkB/wEvAWIBmQH/AWICzAH/AWICzAH/AWICzAH/AWICzAH/AWICzAH/AZkCzAH/
-        A+MB/5QAA/EF/wPxAf8D8QH/A/EB/wPxAf8D6gH/A+oB/wPqAf8D6gX/EAABYgLMAf8BYgLMAf8BYgLM
-        Af8BLwFiAZkB/wEvAWIBmQH/AWICzAH/AWICzAH/AWICzAH/AWICzAH/AWICzAH/AcYB1gHvAf8D6gH/
-        lAAD8Q3/A/EB/wPxAf8D8QH/A/EB/wPqAf8D6gX/EAABYgLMAf8BYgHMAv8BYgHMAv8BLwFiAZkB/wEv
-        AWIBmQH/AWICzAH/AWICzAH/AWICzAH/AWICzAH/AWICzAH/AcYB1gHvBf+UAAPxEf8D8QH/A/EB/wPx
-        Af8D8QH/A+oF/xAAAZkCzAH/AWIBzAL/AWIBzAL/AS8BYgGZAf8BLwFiAZkB/wFiAZkBzAH/AWICzAH/
-        AWICzAH/AWICzAH/AWICzAH/AWICzAH/mAAD8RX/A/EB/wPxAf8D8QH/A/EF/xAAAZkBzAL/AZkBzAL/
-        AZkBzAL/AZkBzAL/AS8BYgGZAf8BLwKZAf8BYgHMAv8BYgHMAv8BYgHMAv8BYgHMAv+cAAPxGf8D8QH/
-        A/EB/wPxBf8QAAGZAcwC/wGZAcwC/wGZAcwC/wGZAcwC/wEvApkB/wEvApkB/wFiAcwC/wGZAcwC/wGZ
-        AcwC/wGZAcwC/5wAA/Ed/wPxAf8D8QX/EAABmQHMAv8BmQHMAv8BmQHMAv8BmQHMAv8BLwKZAf8BLwKZ
-        Af8BmQHMAv8BmQHMAv8BmQHMAv8BmQHMAv+cAAPxKf8QAAGZAcwC/wGZAcwC/wGZAcwC/wGZAcwC/wEv
-        ApkB/wEvApkB/wGZAcwC/wGZAcwC/wGZAcwC/wGZAcwC/5wAA/Ep/xAAAZkBzAL/AZkBzAL/AZkBzAL/
-        AZkBzAL/AS8CmQH/AWICmQH/AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/nAAD8Rn/A+oB/wPdAf8D1wH/
-        FAABmQHMAv8BmQP/AZkD/wGZAcwC/wEvApkB/wFiAZkBzAH/AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/
-        nAAD8Rn/A/EB/wPjBf8UAAGZAcwC/wGZA/8BmQP/AZkD/wFiAswB/wGZAcwC/wGZAcwC/wGZAcwC/wGZ
+        Af8D4wH/A+MF/xQABP8BXwLMAf8DsgH/A/EB/wQAAcYB1gHvAf8BXwLMAf8BXwLMAf8BXwLMAf8BXwGZ
+        AcwB/wPqAf+UAAPxAf8D8QH/A/EB/wPxAf8D8QH/A+oB/wPqAf8D6gH/A+oB/wPqBf8QAAPxAf8BXwLM
+        Af8BXwLMAf8BLAFfAZkB/wEsAV8BmQH/AV8CzAH/AV8CzAH/AV8CzAH/AV8CzAH/AV8CzAH/AZkCzAH/
+        A+MB/5QAA/EF/wPxAf8D8QH/A/EB/wPxAf8D6gH/A+oB/wPqAf8D6gX/EAABXwLMAf8BXwLMAf8BXwLM
+        Af8BLAFfAZkB/wEsAV8BmQH/AV8CzAH/AV8CzAH/AV8CzAH/AV8CzAH/AV8CzAH/AcYB1gHvAf8D6gH/
+        lAAD8Q3/A/EB/wPxAf8D8QH/A/EB/wPqAf8D6gX/EAABXwLMAf8BXwHMAv8BXwHMAv8BLAFfAZkB/wEs
+        AV8BmQH/AV8CzAH/AV8CzAH/AV8CzAH/AV8CzAH/AV8CzAH/AcYB1gHvBf+UAAPxEf8D8QH/A/EB/wPx
+        Af8D8QH/A+oF/xAAAZkCzAH/AV8BzAL/AV8BzAL/ASwBXwGZAf8BLAFfAZkB/wFfAZkBzAH/AV8CzAH/
+        AV8CzAH/AV8CzAH/AV8CzAH/AV8CzAH/mAAD8RX/A/EB/wPxAf8D8QH/A/EF/xAAAZkBzAL/AZkBzAL/
+        AZkBzAL/AZkBzAL/ASwBXwGZAf8BLAKZAf8BXwHMAv8BXwHMAv8BXwHMAv8BXwHMAv+cAAPxGf8D8QH/
+        A/EB/wPxBf8QAAGZAcwC/wGZAcwC/wGZAcwC/wGZAcwC/wEsApkB/wEsApkB/wFfAcwC/wGZAcwC/wGZ
+        AcwC/wGZAcwC/5wAA/Ed/wPxAf8D8QX/EAABmQHMAv8BmQHMAv8BmQHMAv8BmQHMAv8BLAKZAf8BLAKZ
+        Af8BmQHMAv8BmQHMAv8BmQHMAv8BmQHMAv+cAAPxKf8QAAGZAcwC/wGZAcwC/wGZAcwC/wGZAcwC/wEs
+        ApkB/wEsApkB/wGZAcwC/wGZAcwC/wGZAcwC/wGZAcwC/5wAA/Ep/xAAAZkBzAL/AZkBzAL/AZkBzAL/
+        AZkBzAL/ASwCmQH/AV8CmQH/AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/nAAD8Rn/A+oB/wPdAf8D1wH/
+        FAABmQHMAv8BmQP/AZkD/wGZAcwC/wEsApkB/wFfAZkBzAH/AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/
+        nAAD8Rn/A/EB/wPjBf8UAAGZAcwC/wGZA/8BmQP/AZkD/wFfAswB/wGZAcwC/wGZAcwC/wGZAcwC/wGZ
         AcwC/wGZAcwC/5wAA/EZ/wPjBf8YAAGZA/8BmQP/AZkD/wGZA/8BmQHMAv8BmQHMAv8BmQHMAv8BmQHM
         Av8BmQHMAv8BmQHMAv/YAAGZA/8BmQP/AZkBzAL/AZkBzAL/AZkBzAL/AZkBzAL/AcYB1gHvAf8D8QX/
         3AAE/7QAAUIBTQE+BwABPgMAASgDAAFAAwABEAMAAQEBAAEBBQABgBcAA/8BAAL/AfMB5wQAAeABAwHh
@@ -158,8 +158,8 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>370, 17</value>
+  <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>365, 18</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

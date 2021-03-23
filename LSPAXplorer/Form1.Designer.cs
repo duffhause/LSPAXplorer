@@ -36,12 +36,12 @@ namespace LSPAXplorer
 			this.button1 = new System.Windows.Forms.Button();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-			this.hexBox1 = new Be.Windows.Forms.HexBox();
 			this.button2 = new System.Windows.Forms.Button();
+			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+			this.hexBox1 = new Be.Windows.Forms.HexBox();
 			this.contextMenuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -143,6 +143,17 @@ namespace LSPAXplorer
 			this.splitContainer2.SplitterDistance = 207;
 			this.splitContainer2.TabIndex = 0;
 			// 
+			// button2
+			// 
+			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button2.Location = new System.Drawing.Point(684, 12);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(99, 29);
+			this.button2.TabIndex = 5;
+			this.button2.Text = "Liscences";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
 			// hexBox1
 			// 
 			this.hexBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -159,17 +170,6 @@ namespace LSPAXplorer
 			this.hexBox1.TabIndex = 0;
 			this.hexBox1.VScrollBarVisible = true;
 			this.hexBox1.Click += new System.EventHandler(this.hexBox1_Click_1);
-			// 
-			// button2
-			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.Location = new System.Drawing.Point(684, 12);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(99, 29);
-			this.button2.TabIndex = 5;
-			this.button2.Text = "Liscences";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// Form1
 			// 
@@ -203,13 +203,13 @@ namespace LSPAXplorer
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem extractToolStripMenuItem;
-		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.TreeView treeView1;
 		private System.Windows.Forms.SplitContainer splitContainer2;
 		private Be.Windows.Forms.HexBox hexBox1;
 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
 	}
 }
 
