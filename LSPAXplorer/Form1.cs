@@ -23,6 +23,11 @@ namespace LSPAXplorer
 			player = new AxWMPLib.AxWindowsMediaPlayer();
 			liscences = new Liscences();
 			liscences.Hide();
+
+			if (LSPAXplorer.Program.Arguments.Length > 0)
+            {
+				LoadFile(Program.Arguments[0]);
+            }
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -61,21 +66,26 @@ namespace LSPAXplorer
 			}
 		}
 
+		private void LoadFile (string filename)
+        {
+			Reader = File.OpenRead(filename);
+			Root = LSPA.ReadLSPA(Reader, filename);
+
+			if (treeView1.Nodes.Count != 0)
+			{
+				treeView1.Nodes.RemoveAt(0);
+			}
+
+			TreeNode rootTreeNode = new TreeNode();
+			treeView1.Nodes.Add(rootTreeNode);
+			UpdateTree(rootTreeNode, Root, Root.Name);
+		}
+
 		private void button1_Click(object sender, EventArgs e)
 		{
 			if (openFileDialog1.ShowDialog() != DialogResult.Cancel) 
 			{
-				Reader = File.OpenRead(openFileDialog1.FileName);
-				Root = LSPA.ReadLSPA(Reader, openFileDialog1.FileName);
-
-				if (treeView1.Nodes.Count != 0)
-				{
-					treeView1.Nodes.RemoveAt(0);
-				}
-				
-				TreeNode rootTreeNode = new TreeNode();
-				treeView1.Nodes.Add(rootTreeNode);
-				UpdateTree(rootTreeNode, Root, Root.Name);
+				LoadFile(openFileDialog1.FileName);
 			}
 		}
 

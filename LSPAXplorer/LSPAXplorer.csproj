@@ -52,18 +52,6 @@
   <PropertyGroup>
     <ApplicationIcon>128.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>5C7464D186EF884DBFC43BDFAABB413012C067F6</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>LSPAXplorer_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
