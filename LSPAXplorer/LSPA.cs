@@ -9,7 +9,7 @@ namespace LucasDuff
 {
 	class LSPA
 	{
-		private static class Utility
+		public static class Utility
 		{
 			public static byte[] Read(FileStream Reader, int length)
 			{

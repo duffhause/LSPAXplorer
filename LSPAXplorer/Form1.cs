@@ -141,8 +141,8 @@ namespace LSPAXplorer
 				textBox.Text = textBox.Text.Replace("\n", "\r\n");
 				textBox.ScrollBars = ScrollBars.Both;
 				this.splitContainer2.Panel1.Controls.Add(textBox);
-			} 
-			
+			}
+
 			// FFMPEG support will be fully implemnted later
 			/*else if (StringInArray(ext, SoundExtensions))
 			{
@@ -152,6 +152,17 @@ namespace LSPAXplorer
 				PlayInPlayer(chunk, true, ".mp4");
 			}
 			*/
+			string date;
+			if (chunk.Flag.Metadata)
+			{
+				DateTime modifiedDate = LSPA.Utility.GetModifiedDate(chunk.Metadata);
+				date = String.Format("[ {1} ] - last modified: {0}", modifiedDate.ToString("yyyy-MM-dd HH:mm:ss"), chunk.Name);
+			}
+			else
+			{
+				date = String.Format("[ {0} ] - last modified date is not recorded", chunk.Name);
+			}
+			modifieddate.Text = date;
 		}
 
 		/*
@@ -233,6 +244,22 @@ namespace LSPAXplorer
 		private void button2_Click(object sender, EventArgs e)
 		{
 			liscences.ShowDialog();
+		}
+
+		private void viewModifiedDateToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			LSPA.Chunk.Node chunk = (LSPA.Chunk.Node)treeView1.SelectedNode.Tag;
+			string date;
+			if (chunk.Flag.Metadata)
+			{
+				DateTime modifiedDate = LSPA.Utility.GetModifiedDate(chunk.Metadata);
+				date = String.Format("Last modified: {0}", modifiedDate.ToString("yyyy-MM-dd HH:mm:ss"));
+			} else
+			{
+				date = "Modified date is not available for this file";
+			}
+
+			MessageBox.Show(date);
 		}
 	}
 }

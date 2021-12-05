@@ -33,15 +33,17 @@ namespace LSPAXplorer
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.extractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.viewModifiedDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.button1 = new System.Windows.Forms.Button();
 			this.imageList1 = new System.Windows.Forms.ImageList(this.components);
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+			this.hexBox1 = new Be.Windows.Forms.HexBox();
 			this.button2 = new System.Windows.Forms.Button();
 			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-			this.hexBox1 = new Be.Windows.Forms.HexBox();
+			this.modifieddate = new System.Windows.Forms.Label();
 			this.contextMenuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -56,25 +58,35 @@ namespace LSPAXplorer
 			// 
 			this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.extractToolStripMenuItem});
+            this.extractToolStripMenuItem,
+            this.viewModifiedDateToolStripMenuItem});
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(124, 28);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(178, 48);
 			// 
 			// extractToolStripMenuItem
 			// 
 			this.extractToolStripMenuItem.Name = "extractToolStripMenuItem";
-			this.extractToolStripMenuItem.Size = new System.Drawing.Size(123, 24);
+			this.extractToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
 			this.extractToolStripMenuItem.Text = "Extract";
 			this.extractToolStripMenuItem.Click += new System.EventHandler(this.extractToolStripMenuItem_Click);
+			// 
+			// viewModifiedDateToolStripMenuItem
+			// 
+			this.viewModifiedDateToolStripMenuItem.Name = "viewModifiedDateToolStripMenuItem";
+			this.viewModifiedDateToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+			this.viewModifiedDateToolStripMenuItem.Text = "View Modified Date";
+			this.viewModifiedDateToolStripMenuItem.Visible = false;
+			this.viewModifiedDateToolStripMenuItem.Click += new System.EventHandler(this.viewModifiedDateToolStripMenuItem_Click);
 			// 
 			// button1
 			// 
 			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.button1.ImageIndex = 0;
 			this.button1.ImageList = this.imageList1;
-			this.button1.Location = new System.Drawing.Point(13, 12);
+			this.button1.Location = new System.Drawing.Point(10, 10);
+			this.button1.Margin = new System.Windows.Forms.Padding(2);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(95, 30);
+			this.button1.Size = new System.Drawing.Size(71, 24);
 			this.button1.TabIndex = 1;
 			this.button1.Text = "File";
 			this.button1.UseVisualStyleBackColor = true;
@@ -97,7 +109,8 @@ namespace LSPAXplorer
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.splitContainer1.Location = new System.Drawing.Point(12, 48);
+			this.splitContainer1.Location = new System.Drawing.Point(9, 39);
+			this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
 			this.splitContainer1.Name = "splitContainer1";
 			// 
 			// splitContainer1.Panel1
@@ -108,8 +121,9 @@ namespace LSPAXplorer
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
 			this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-			this.splitContainer1.Size = new System.Drawing.Size(776, 390);
-			this.splitContainer1.SplitterDistance = 233;
+			this.splitContainer1.Size = new System.Drawing.Size(582, 303);
+			this.splitContainer1.SplitterDistance = 174;
+			this.splitContainer1.SplitterWidth = 3;
 			this.splitContainer1.TabIndex = 4;
 			// 
 			// treeView1
@@ -120,9 +134,10 @@ namespace LSPAXplorer
 			this.treeView1.ImageIndex = 1;
 			this.treeView1.ImageList = this.imageList1;
 			this.treeView1.Location = new System.Drawing.Point(0, 0);
+			this.treeView1.Margin = new System.Windows.Forms.Padding(2);
 			this.treeView1.Name = "treeView1";
 			this.treeView1.SelectedImageIndex = 0;
-			this.treeView1.Size = new System.Drawing.Size(231, 388);
+			this.treeView1.Size = new System.Drawing.Size(172, 301);
 			this.treeView1.TabIndex = 0;
 			this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
 			this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeview1_MouseDown);
@@ -132,27 +147,18 @@ namespace LSPAXplorer
 			this.splitContainer2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+			this.splitContainer2.Location = new System.Drawing.Point(2, 2);
+			this.splitContainer2.Margin = new System.Windows.Forms.Padding(2);
 			this.splitContainer2.Name = "splitContainer2";
 			this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
 			// splitContainer2.Panel2
 			// 
 			this.splitContainer2.Panel2.Controls.Add(this.hexBox1);
-			this.splitContainer2.Size = new System.Drawing.Size(531, 382);
-			this.splitContainer2.SplitterDistance = 207;
+			this.splitContainer2.Size = new System.Drawing.Size(399, 284);
+			this.splitContainer2.SplitterDistance = 149;
+			this.splitContainer2.SplitterWidth = 3;
 			this.splitContainer2.TabIndex = 0;
-			// 
-			// button2
-			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.Location = new System.Drawing.Point(684, 12);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(99, 29);
-			this.button2.TabIndex = 5;
-			this.button2.Text = "Liscences";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// hexBox1
 			// 
@@ -162,25 +168,50 @@ namespace LSPAXplorer
 			this.hexBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.hexBox1.LineInfoVisible = true;
 			this.hexBox1.Location = new System.Drawing.Point(0, 0);
+			this.hexBox1.Margin = new System.Windows.Forms.Padding(2);
 			this.hexBox1.Name = "hexBox1";
 			this.hexBox1.ReadOnly = true;
 			this.hexBox1.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-			this.hexBox1.Size = new System.Drawing.Size(531, 171);
+			this.hexBox1.Size = new System.Drawing.Size(399, 132);
 			this.hexBox1.StringViewVisible = true;
 			this.hexBox1.TabIndex = 0;
 			this.hexBox1.VScrollBarVisible = true;
 			this.hexBox1.Click += new System.EventHandler(this.hexBox1_Click_1);
 			// 
+			// button2
+			// 
+			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.button2.Location = new System.Drawing.Point(513, 10);
+			this.button2.Margin = new System.Windows.Forms.Padding(2);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(74, 24);
+			this.button2.TabIndex = 5;
+			this.button2.Text = "Liscences";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// modifieddate
+			// 
+			this.modifieddate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.modifieddate.AutoSize = true;
+			this.modifieddate.Location = new System.Drawing.Point(12, 344);
+			this.modifieddate.Name = "modifieddate";
+			this.modifieddate.Size = new System.Drawing.Size(10, 13);
+			this.modifieddate.TabIndex = 1;
+			this.modifieddate.Text = " ";
+			// 
 			// Form1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(600, 366);
+			this.Controls.Add(this.modifieddate);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.button1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "Form1";
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
 			this.Text = "LSPA Xplorer";
@@ -195,6 +226,7 @@ namespace LSPAXplorer
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
 			this.splitContainer2.ResumeLayout(false);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -210,6 +242,8 @@ namespace LSPAXplorer
 		private System.Windows.Forms.ImageList imageList1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+		private System.Windows.Forms.ToolStripMenuItem viewModifiedDateToolStripMenuItem;
+		private System.Windows.Forms.Label modifieddate;
 	}
 }
 
