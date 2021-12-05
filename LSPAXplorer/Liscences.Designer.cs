@@ -30,34 +30,21 @@ namespace LSPAXplorer
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Liscences));
-			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.tabControl1.SuspendLayout();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage2.SuspendLayout();
-			this.tabPage1.SuspendLayout();
+			this.tabControl1.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(692, 353);
-			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage2
 			// 
 			this.tabPage2.Controls.Add(this.textBox2);
-			this.tabPage2.Location = new System.Drawing.Point(4, 25);
+			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(684, 324);
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+			this.tabPage2.Size = new System.Drawing.Size(511, 261);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Be.HexBox";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -65,62 +52,48 @@ namespace LSPAXplorer
 			// textBox2
 			// 
 			this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox2.Location = new System.Drawing.Point(3, 3);
+			this.textBox2.Location = new System.Drawing.Point(2, 2);
+			this.textBox2.Margin = new System.Windows.Forms.Padding(2);
 			this.textBox2.Multiline = true;
 			this.textBox2.Name = "textBox2";
 			this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox2.Size = new System.Drawing.Size(678, 318);
+			this.textBox2.Size = new System.Drawing.Size(507, 257);
 			this.textBox2.TabIndex = 1;
 			this.textBox2.Text = resources.GetString("textBox2.Text");
 			// 
-			// tabPage1
+			// tabControl1
 			// 
-			this.tabPage1.Controls.Add(this.textBox1);
-			this.tabPage1.Location = new System.Drawing.Point(4, 25);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(684, 324);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "FFmpeg";
-			this.tabPage1.UseVisualStyleBackColor = true;
-			// 
-			// textBox1
-			// 
-			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox1.Location = new System.Drawing.Point(3, 3);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.textBox1.Size = new System.Drawing.Size(678, 318);
-			this.textBox1.TabIndex = 0;
-			this.textBox1.Text = resources.GetString("textBox1.Text");
-			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControl1.Location = new System.Drawing.Point(0, 0);
+			this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(519, 287);
+			this.tabControl1.TabIndex = 0;
 			// 
 			// Liscences
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(692, 353);
+			this.ClientSize = new System.Drawing.Size(519, 287);
 			this.Controls.Add(this.tabControl1);
+			this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 			this.Name = "Liscences";
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
 			this.Text = "Liscences";
-			this.tabControl1.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.tabPage2.PerformLayout();
-			this.tabPage1.ResumeLayout(false);
-			this.tabPage1.PerformLayout();
+			this.tabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabPage tabPage2;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TabControl tabControl1;
 	}
 }

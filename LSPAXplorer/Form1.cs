@@ -141,15 +141,20 @@ namespace LSPAXplorer
 				textBox.Text = textBox.Text.Replace("\n", "\r\n");
 				textBox.ScrollBars = ScrollBars.Both;
 				this.splitContainer2.Panel1.Controls.Add(textBox);
-			} else if (StringInArray(ext, SoundExtensions))
+			} 
+			
+			// FFMPEG support will be fully implemnted later
+			/*else if (StringInArray(ext, SoundExtensions))
 			{
 				PlayInPlayer(chunk, true, ".mp3");
 			} else if (StringInArray(ext, VideoExtensions))
 			{
 				PlayInPlayer(chunk, true, ".mp4");
 			}
+			*/
 		}
 
+		/*
 		private void PlayInPlayer(LSPA.Chunk.Node chunk, bool convert, string codec = "")
 		{
 			player = new AxWMPLib.AxWindowsMediaPlayer();
@@ -191,6 +196,7 @@ namespace LSPAXplorer
 			player.URL = tmp0;
 			player.Ctlcontrols.stop();
 		}
+		*/
 
 		private void extractToolStripMenuItem_Click(object sender, EventArgs e)
 		{
