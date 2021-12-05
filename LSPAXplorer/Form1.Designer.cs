@@ -40,10 +40,10 @@ namespace LSPAXplorer
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-			this.hexBox1 = new Be.Windows.Forms.HexBox();
 			this.button2 = new System.Windows.Forms.Button();
 			this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
 			this.modifieddate = new System.Windows.Forms.Label();
+			this.hexBox1 = new Be.Windows.Forms.HexBox();
 			this.contextMenuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
@@ -101,7 +101,7 @@ namespace LSPAXplorer
 			// 
 			// openFileDialog1
 			// 
-			this.openFileDialog1.FileName = "openFileDialog1";
+			this.openFileDialog1.Filter = "|*.lmlm";
 			// 
 			// splitContainer1
 			// 
@@ -160,24 +160,6 @@ namespace LSPAXplorer
 			this.splitContainer2.SplitterWidth = 3;
 			this.splitContainer2.TabIndex = 0;
 			// 
-			// hexBox1
-			// 
-			this.hexBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.hexBox1.ColumnInfoVisible = true;
-			this.hexBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.hexBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-			this.hexBox1.LineInfoVisible = true;
-			this.hexBox1.Location = new System.Drawing.Point(0, 0);
-			this.hexBox1.Margin = new System.Windows.Forms.Padding(2);
-			this.hexBox1.Name = "hexBox1";
-			this.hexBox1.ReadOnly = true;
-			this.hexBox1.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-			this.hexBox1.Size = new System.Drawing.Size(399, 132);
-			this.hexBox1.StringViewVisible = true;
-			this.hexBox1.TabIndex = 0;
-			this.hexBox1.VScrollBarVisible = true;
-			this.hexBox1.Click += new System.EventHandler(this.hexBox1_Click_1);
-			// 
 			// button2
 			// 
 			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -199,6 +181,24 @@ namespace LSPAXplorer
 			this.modifieddate.Size = new System.Drawing.Size(10, 13);
 			this.modifieddate.TabIndex = 1;
 			this.modifieddate.Text = " ";
+			// 
+			// hexBox1
+			// 
+			this.hexBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.hexBox1.ColumnInfoVisible = true;
+			this.hexBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.hexBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+			this.hexBox1.LineInfoVisible = true;
+			this.hexBox1.Location = new System.Drawing.Point(0, 0);
+			this.hexBox1.Margin = new System.Windows.Forms.Padding(2);
+			this.hexBox1.Name = "hexBox1";
+			this.hexBox1.ReadOnly = true;
+			this.hexBox1.ShadowSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(60)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
+			this.hexBox1.Size = new System.Drawing.Size(399, 132);
+			this.hexBox1.StringViewVisible = true;
+			this.hexBox1.TabIndex = 0;
+			this.hexBox1.VScrollBarVisible = true;
+			this.hexBox1.Click += new System.EventHandler(this.hexBox1_Click_1);
 			// 
 			// Form1
 			// 
